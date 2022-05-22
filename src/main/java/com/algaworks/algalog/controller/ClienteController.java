@@ -24,7 +24,13 @@ public class ClienteController {
         cliente2.setTelefone("34 99999-2222");
         cliente2.setEmail("maria@algaworks.com.br");
 
-        return Arrays.asList(cliente1, cliente2);
+        var cliente3 = new Cliente();
+        cliente3.setId(3L);
+        cliente3.setNome("Anderson");
+        cliente3.setTelefone("11 87777-2222");
+        cliente3.setEmail("anderson@algaworks.com.br");
+
+        return Arrays.asList(cliente1, cliente2, cliente3);
     }
 
 }
