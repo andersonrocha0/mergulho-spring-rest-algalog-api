@@ -2,11 +2,11 @@ package com.algaworks.algalog.controller;
 
 import com.algaworks.algalog.domain.model.Cliente;
 import com.algaworks.algalog.domain.repository.ClienteRepository;
+import com.algaworks.algalog.service.CatalogoClienteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.algaworks.algalog.service.CatalogoClienteService;
 
 import javax.validation.Valid;
 import java.util.List;

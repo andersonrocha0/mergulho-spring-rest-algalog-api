@@ -1,6 +1,6 @@
 package com.algaworks.algalog.domain.model;
 
-import lombok.EqualsAndHashCode;
+import com.algaworks.algalog.domain.ValidationGroups;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.Hibernate;
@@ -8,6 +8,7 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -18,7 +19,7 @@ public class Cliente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
+    @NotNull(groups = ValidationGroups.ClienteId.class)
     private Long id;
 
 
