@@ -2,7 +2,7 @@ package com.algaworks.algalog.controller;
 
 import com.algaworks.algalog.domain.model.Cliente;
 import com.algaworks.algalog.domain.repository.ClienteRepository;
-import com.algaworks.algalog.service.CatalogoClienteService;
+import com.algaworks.algalog.domain.service.CatalogoClienteService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

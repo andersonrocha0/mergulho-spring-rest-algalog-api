@@ -4,7 +4,7 @@ import com.algaworks.algalog.api.mapper.EntregaMapper;
 import com.algaworks.algalog.api.model.EntregaModel;
 import com.algaworks.algalog.api.model.input.EntregaInput;
 import com.algaworks.algalog.domain.repository.EntregaRepository;
-import com.algaworks.algalog.service.SolicitacaoEntregaService;
+import com.algaworks.algalog.domain.service.SolicitacaoEntregaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,5 +41,6 @@ public class EntregaController {
                 .map(entrega -> ResponseEntity.ok(mapper.toModel(entrega)))
                 .orElse(ResponseEntity.notFound().build());
     }
+
 
 }

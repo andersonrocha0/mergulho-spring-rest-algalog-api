@@ -1,0 +1,27 @@
+package com.algaworks.algalog.api.mapper;
+
+import com.algaworks.algalog.api.model.OcorrenciaModel;
+import com.algaworks.algalog.domain.model.Ocorrencia;
+import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@AllArgsConstructor
+@Component
+public class OcorrenciaMapper {
+
+    private ModelMapper modelmapper;
+
+    public OcorrenciaModel toModel(Ocorrencia ocorrencia) {
+        return modelmapper.map(ocorrencia, OcorrenciaModel.class);
+    }
+
+    public List<OcorrenciaModel> toCollectionModel(List<Ocorrencia> ocorrencias) {
+        return ocorrencias.stream().map(this::toModel).collect(Collectors.toList());
+    }
+
+
+}

@@ -1,4 +1,4 @@
-package com.algaworks.algalog.service;
+package com.algaworks.algalog.domain.service;
 
 import com.algaworks.algalog.domain.model.Entrega;
 import com.algaworks.algalog.domain.model.StatusEntrega;

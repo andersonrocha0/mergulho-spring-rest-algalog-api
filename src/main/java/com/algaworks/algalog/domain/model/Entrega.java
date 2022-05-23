@@ -11,6 +11,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.groups.ConvertGroup;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -47,6 +49,9 @@ public class Entrega {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private OffsetDateTime dataFinalizacao;
 
+    @OneToMany(mappedBy = "entrega", cascade = CascadeType.ALL)
+    private List<Ocorrencia> ocorrencias = new ArrayList<>();
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -58,5 +63,14 @@ public class Entrega {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public Ocorrencia adicionarOcorrencia(String descricao) {
+        var ocorrencia = new Ocorrencia();
+        ocorrencia.setDescricao(descricao);
+        ocorrencia.setDataRegistro(OffsetDateTime.now());
+        ocorrencia.setEntrega(this);
+        this.getOcorrencias().add(ocorrencia);
+        return ocorrencia;
     }
 }
